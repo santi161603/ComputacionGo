@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Web en Go</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a la aplicación web en Go</h1>
+        <p class="host-info">Nombre del host: {{.Host}}</p>
+        <p class="intro-text">Aquí están algunas imágenes aleatorias codificadas en Base64:</p>
+        
+        <div class="images">
+            {{range .Images}}
+                <div class="image-item">
+                    <img src="data:image/png;base64,{{.Base64}}" alt="Imagen aleatoria" class="image">
+                    <p class="image-name">{{.Name}}</p> <!-- Mostrar el nombre de la imagen aquí -->
+                </div>
+            {{end}}
+        </div>
+    </div>
+</body>
+</html>
